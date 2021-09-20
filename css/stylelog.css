@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+#sal{
+    color: brown;
+    text-align: right;
+    padding: 10px;
+    border-radius: 2em;
+    background-color: rgb(221, 224, 26);
+}
+
+#sal:hover{
+    background-color: rgb(26, 135, 224);
+}
+
+#salir:hover{
+   color: black;
+}
+
+#t1,#t2{
+    text-align: center;
+}

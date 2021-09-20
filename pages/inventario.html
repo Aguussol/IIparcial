@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#bla"  />
+    <title>Inventario</title>
+    
+
+    <!-- link a Boostrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+   <!-- link a CSS -->
+    <link rel="stylesheet" href="../css/stylelog.css" />
+  </head>
+  <body>
+    <header class="container-fluid bg-dark position-sticky top-0">
+      
+       <!-- Menu-->
+      <ul
+        class="nav nav-pills mb-3 py-3 container"
+        id="pills-tab"
+        role="tablist"
+      >
+        
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-profile"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+            >Productos</a
+          >
+        </li>
+
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-contacto-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-contacto"
+            type="button"
+            role="tab"
+            aria-controls="pills-contacto"
+            aria-selected="false"
+            >Contactanos</a>
+        </li>
+  
+         <li class="nav-item" role="presentation" id="sal">
+          <a href="principal.html" id="salir">Salir</a>
+        </li>
+      </ul>
+    </header>
+
+  
+    <main>
+    <div class="tab-content" id="pills-tabContent">
+     
+       <!--   PAGINA De Producto -->
+      <div
+        class="tab-pane fade show active container"
+        id="pills-profile"
+        role="tabpanel"
+        aria-labelledby="pills-profile-tab" >
+
+      <h1 id="t2"> Productos En Caja E Ingreso De Productos</h1>
+      <div class="container">
+
+        <form action="">
+            <label for="idCodigo">Código</label>
+            <input type="number" class="form-control" id="idCodigo" name="txtCodigo">
+
+            <label for="idNombre">Proovedor</label>
+            <input type="text" class="form-control" id="idProovedor" name="txtProovedor">
+
+            <label for="idNombre">Producto</label>
+            <input type="text" class="form-control" id="idNombre" name="txtNombre">
+
+            <label for="idcan">Cantidad</label>
+            <input type="number" class="form-control" id="idCantidad" name="txtNombre">
+
+            <label for="idPrecio">Precio</label>
+            <input type="number" class="form-control" id="idPrecio" name="txtPrecio">
+
+            <label for="idNombre">Fecha</label>
+            <input type="date" class="form-control" id="idDate" name="txtDate">
+
+
+            <hr>
+            <input type="button" value="Guardar Datos" class="btn btn-success" onclick="addProduct()">
+            
+
+            <br>
+            <table class="table table-bordered table-striped">
+                <thead style="background-color: black; color: white;">
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Proovedor</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Fecha</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody id="idTableBody">
+
+                </tbody>
+            </table>
+        </form>
+
+      </div>
+      </div>
+
+     <!--   PAGINA de Contacto -->
+    <div
+      class="tab-pane fade contacto"
+      id="pills-contacto"
+      role="tabpanel"
+      aria-labelledby="pills-contacto-tab" >
+      <h1 id="t1">Inventario De Productos Vendidos</h1>
+
+      <div class="container">
+        <div class="row my-5">
+          <div class="col-md-4">
+  
+            <div class="card">
+              <div class="card-body">
+                <form id="formTask">
+                  <h2>Ingrese Datos</h2>
+                  <div class="form-group">
+                    <input type="number" id="idcod" placeholder="Codigo" class="form-control">
+                    <input type="text" id="title" placeholder="Producto" class="form-control">
+                    <input type="number" id="can" placeholder="Cantidad" class="form-control">
+                    <input type="number" id="precio" placeholder="Precio" class="form-control">
+                    <input type="text" id="proovedor" placeholder="Proovedor" class="form-control">
+                    <input type="date" id="date" placeholder="Fecha" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <textarea id="description" cols="5" rows="3" class="form-control" placeholder="Descripcion"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">Guardar Datos</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+           <table class="table table-bordered table-striped">
+            <thead style="background-color: black; color: white;">
+                <tr>
+                    <th>Codigo</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Descripcion</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+            <tbody id="idTableBod">
+
+            </tbody>
+        </table>
+
+          <div class="col-md-8">
+            <div id="tasks"></div>
+          </div>
+        </div>
+      </div>
+  
+     </div>
+
+    </div>
+
+    <footer class="bg-dark p-3 mt-5">
+      <p class="text-center m-0 text-muted">@gss Desarrollo web 2021</p>
+    </footer>
+
+
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/scriplog.js"></script>
+  </body>
+</html>
